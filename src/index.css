@@ -14,19 +14,21 @@ body {
 }
 .todo-app > ul > li{
   width: 100%;
-  border:1px solid deepskyblue;
-  border-radius: 3px;
 }
 .todo-app > ul > li + li{
   /*border-top: 1px solid #f8f9fb;*/
   margin-top: 2px;
-  background-color: white;
 }
 .todo-app > ul > li > a {
   padding: 10px 25px;
   display: block;
   font-size: 13px;
   cursor: pointer;
+  color:white;
+  border-radius: 3px;
+  background-color: coral;
+  text-transform: capitalize;
+
 }
 .todo-app > form > input{
   width: 350px;

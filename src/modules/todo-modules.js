@@ -8,6 +8,14 @@ const getTodo = () => {
     return JSON.parse(localStorage.getItem('todos'));
 };
 
+const addTodo = (object) => {
+    let todos = getTodo();
+    todos.push(object);
+    localStorage.setItem('todos', JSON.stringify(todos));
+    return JSON.parse(localStorage.getItem('todos'));
+};
+
 export {
-    getTodo
+    getTodo,
+    addTodo
 }
