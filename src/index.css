@@ -41,3 +41,7 @@ body {
 .text-right{
   text-align: right;
 }
+.todo-app > ul > li.completed > a{
+  /*background-color: rgba(255,127,80, 0.8);*/
+  opacity: 0.4;
+}

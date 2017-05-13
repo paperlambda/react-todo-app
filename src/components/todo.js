@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Todo = ({children, index, complete, completed}) => <li><a><input checked={completed} onChange={complete} className="checkbox" type="checkbox" id={index}/> {children}</a></li>;
+const isCompleted = (param) => param === true ? 'completed' : '';
+
+const Todo = ({children, index, complete, completed}) => <li className={isCompleted(completed)}><a><input checked={completed} onChange={complete} className="checkbox" type="checkbox" id={index}/> {children}</a></li>;
 
 export default Todo;
