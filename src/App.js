@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TodoList from './components/todo-list';
 import FormAdd from './components/form-add';
-import {getTodo, addTodo} from './modules/todo-modules';
+import {getTodo, addTodo, completeTodo} from './modules/todo-modules';
 
 class App extends Component {
     constructor(props){
@@ -14,6 +14,12 @@ class App extends Component {
         let todos = addTodo(todo);
         this.setState({todos: todos});
     }
+    completeTodo(event){
+        // console.log(event);
+        let target = event.target;
+        let todos = completeTodo(target.id);
+        this.setState({todos: todos});
+    }
     componentDidMount(){
         let todos = getTodo();
         this.setState({todos:todos});
@@ -22,7 +28,7 @@ class App extends Component {
         return (
           <div className="todo-app">
             <FormAdd submitNew={this.submitNew.bind(this)}/>
-            <TodoList todos={this.state.todos}></TodoList>
+            <TodoList complete={this.completeTodo.bind(this)} todos={this.state.todos}></TodoList>
           </div>
         );
     }

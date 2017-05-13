@@ -1,8 +1,5 @@
-import React, { Component, PropTypes} from 'react';
+import React from 'react';
 
-const Todo = ({children}) => <li><a>{children}</a></li>;
-
-Todo.PropTypes = {children: React.PropTypes.string};
-Todo.defaultProps = {children : 'This is your task.'};
+const Todo = ({children, index, complete, completed}) => <li><a><input checked={completed} onChange={complete} className="checkbox" type="checkbox" id={index}/> {children}</a></li>;
 
 export default Todo;

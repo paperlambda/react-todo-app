@@ -15,7 +15,15 @@ const addTodo = (object) => {
     return JSON.parse(localStorage.getItem('todos'));
 };
 
+const completeTodo = (index) => {
+    let todos =  getTodo();
+    todos[index].completed = !todos[index].completed;
+    localStorage.setItem('todos', JSON.stringify(todos));
+    return JSON.parse(localStorage.getItem('todos'));
+};
+
 export {
     getTodo,
-    addTodo
+    addTodo,
+    completeTodo
 }

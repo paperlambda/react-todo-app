@@ -20,7 +20,7 @@ body {
   margin-top: 2px;
 }
 .todo-app > ul > li > a {
-  padding: 10px 25px;
+  padding: 10px 30px;
   display: block;
   font-size: 13px;
   cursor: pointer;
@@ -28,8 +28,16 @@ body {
   border-radius: 3px;
   background-color: coral;
   text-transform: capitalize;
-
+  position: relative;
 }
 .todo-app > form > input{
   width: 350px;
+}
+.todo-app > ul > li > a > .checkbox {
+  position: absolute;
+  left:10px;
+  top:10px;
+}
+.text-right{
+  text-align: right;
 }
