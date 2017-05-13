@@ -14,6 +14,10 @@ body {
 }
 .todo-app > ul > li{
   width: 100%;
+  position: relative;
+}
+.todo-app > ul > li:hover > .close{
+  display: block;
 }
 .todo-app > ul > li + li{
   /*border-top: 1px solid #f8f9fb;*/
@@ -30,6 +34,25 @@ body {
   text-transform: capitalize;
   position: relative;
 }
+.todo-app > ul > li > .close{
+  /*float: right;*/
+  font-size: 11px;
+  position: absolute;
+  right: 0px;
+  top:0px;
+  color:white;
+  padding: 10.9px 9px;
+  display: none;
+  cursor: pointer;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.todo-app > ul > li > .close:hover{
+  background-color: #d2693a;
+  text-decoration: underline;
+}
+
 .todo-app > form > input{
   width: 350px;
 }

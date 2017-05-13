@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TodoList from './components/todo-list';
 import FormAdd from './components/form-add';
-import {getTodo, addTodo, completeTodo} from './modules/todo-modules';
+import {getTodo, addTodo, completeTodo, removeTodo} from './modules/todo-modules';
 
 class App extends Component {
     constructor(props){
@@ -24,11 +24,16 @@ class App extends Component {
         let todos = getTodo();
         this.setState({todos:todos});
     }
+    removeTodo(event){
+        let target = event.target;
+        let todos = removeTodo(target.id);
+        this.setState({todos: todos});
+    }
     render() {
         return (
           <div className="todo-app">
             <FormAdd submitNew={this.submitNew.bind(this)}/>
-            <TodoList complete={this.completeTodo.bind(this)} todos={this.state.todos}></TodoList>
+            <TodoList remove={this.removeTodo.bind(this)} complete={this.completeTodo.bind(this)} todos={this.state.todos}></TodoList>
           </div>
         );
     }

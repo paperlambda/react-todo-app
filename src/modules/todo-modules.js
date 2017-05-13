@@ -22,8 +22,17 @@ const completeTodo = (index) => {
     return JSON.parse(localStorage.getItem('todos'));
 };
 
+const removeTodo = (index) => {
+    console.log(index);
+    let todos = getTodo();
+    todos.splice(index,1);
+    localStorage.setItem('todos', JSON.stringify(todos));
+    return JSON.parse(localStorage.getItem('todos'));
+};
+
 export {
     getTodo,
     addTodo,
-    completeTodo
+    completeTodo,
+    removeTodo
 }
